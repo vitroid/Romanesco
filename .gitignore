@@ -1,2 +1,7 @@
 *.png
 *.pdf
+*.jpg
+*.pov
+.DS_Store
+
+test.inc
