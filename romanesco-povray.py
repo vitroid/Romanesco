@@ -46,9 +46,9 @@ def romanesco(origin,direc,rad):
         ss = s*0.5
         th = 0.0
         tau = (sqrt(5.0)-1)*pi
-        tau = 377./610*2*pi
-        tau = 144./233*2*pi
-        tau = 89./144*2*pi
+        #tau = 377./610*2*pi
+        #tau = 144./233*2*pi
+        #tau = 89./144*2*pi
         tau = 55./89*2*pi
         #tau = 32./55*2*pi
         #tau = 21./32*2*pi
@@ -88,7 +88,7 @@ def romanesco(origin,direc,rad):
 
 origin = (250,800,0)
 direc  = (0,-700,0)
-rad=10
+rad=3
 print """
 #include "colors.inc"
 #include "glass_old.inc"
