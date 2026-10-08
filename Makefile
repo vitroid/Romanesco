@@ -1,4 +1,15 @@
-%.500.png: %.pov
-	povray +w500 +h500 +FN +Q9 +A0.3 +AM2 +D -Lbin -Lbin/include -i$< -O$@
-%.2000.png: %.pov
-	povray +w2000 +h2000 +FN +Q9 +A0.3 +AM2 +D -Lbin -Lbin/include -i$< -O$@
+SIZE ?= 1000
+ARGS ?=
+
+all: lsystem.png
+
+lsystem.png: lsystem.pov
+	povray +W$(SIZE) +H$(SIZE) +A0.3 -D -GA +I$< +O$@
+
+lsystem.pov: romanesco-lsystem.py
+	python3 romanesco-lsystem.py $(ARGS) > $@
+
+clean:
+	rm -f lsystem.pov lsystem.png
+
+.PHONY: all clean
